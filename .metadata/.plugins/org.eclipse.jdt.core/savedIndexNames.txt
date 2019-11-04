@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+/home/admin1/Desktop/eclipse-inst-linux64/.metadata/.plugins/org.eclipse.jdt.core
+450294834.index
+4112143864.index
+2448082337.index
+3612414433.index
+3322610038.index

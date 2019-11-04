@@ -1,0 +1,27 @@
+package com.bridgelabz.unit;
+
+import java.util.Scanner;
+
+public class TemperatureConversion 
+{
+
+ public static void  conversion(double f, double c)
+ {
+	 double fahrenhitToCel = (f - 32) * 5/9;
+	 double celToFahrenhit = (c * 9/5) + 32;
+	System.out.println("changing the value celcius to fahrenhit is " +fahrenhitToCel);
+	System.out.println("changing the value fahrenhit to celcius is " +celToFahrenhit);
+	
+ }
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter fahrenhit value:");
+		double f = sc.nextDouble();
+		System.out.println("enter celcious value:");
+		double c = sc.nextDouble();
+		conversion(f, c);
+		
+	}
+	
+}
