@@ -40,7 +40,9 @@ public static void main(String[] args)
 	
 	System.out.println("the binary no  is -->" +decToBinary(n));
 	String str = decToBinary(n);
+	System.out.println("String value : "+str);
 	int s = Integer.parseInt(str);
+	
 	int num = binaryToDec(s);
 	System.out.println("value is "+binaryToDec(num));
 	
