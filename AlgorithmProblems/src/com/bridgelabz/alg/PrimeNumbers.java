@@ -13,18 +13,18 @@ public static void main(String[] args)
 	int end = sc.nextInt();
 	System.out.println("the prime numbers between " +start +" and" +end+ " is:");
 	
-	for(int i = 2;i < end;i++)
+	for(int i = 1;i <= end;i++)
 	{
 		int count = 0;
-		for(int j = 2;j < i;j++)
+		for(int j = i;j >= 1;j--)
 		{
 			if(i%j == 0)
 			{
 				count++;
-				break;
+				
 			}
 		}
-		if(count == 0)
+		if(count == 2)
 		{
 			System.out.print(i+" ");
 		}
