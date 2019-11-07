@@ -1,0 +1,26 @@
+package com.bridgelabz.alg;
+
+public class GenericBinary 
+{
+ public static <T extends Comparable<T>> int binarySearch(T[] array, T search, int low, int high)
+ {
+	 while(low < high)
+	 {
+		 int mid = (low + high)/2;
+		 int comp = array[mid].compareTo(search);
+		 if(comp < 0)
+		 {
+			 return binarySearch(array, search, low, mid-1);
+		 }
+		 else if(comp > 0)
+		 {
+			 return binarySearch(array, search, mid+1, high);
+		 }
+		 
+		 
+	 }
+	return -1;
+	 
+ }
+	
+}
