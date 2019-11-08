@@ -6,9 +6,8 @@ public class GenericBinary
 {
  public static <T extends Comparable<T>> int binarySearch(T[] array, T search)
  {
-	 int n = array.length;
 	 int low = 0;
-	 int high = n;
+	 int high = array.length;
 	 while (low < high)
 		{
  		int mid = (low + high) / 2;
@@ -28,8 +27,8 @@ public class GenericBinary
 	{
 	Scanner sc = new Scanner(System.in);
 	System.out.println("enter the size of the words: ");
-	int n = sc.nextInt();
-	String[] array = new String[n];
+	int high = sc.nextInt();
+	String[] array = new String[high];
 	System.out.println("enter the names: ");
 	for(int i = 0;i < array.length;i++)
 	{
