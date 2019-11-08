@@ -1,0 +1,12 @@
+package com.bridgelabz.alg;
+
+public class GuessingGame 
+{
+public static void main(String[] args) 
+{
+ System.out.println("enter the no: ");
+ int c = 5;
+ UtilClass.find(c);
+}
+
+}

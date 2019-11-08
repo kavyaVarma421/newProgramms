@@ -1,0 +1,30 @@
+package com.bridgelabz.alg;
+
+public class UtilClass 
+{
+ public static int find(int c)
+ {
+	 int low =0;
+	 int high = 130;
+	 int mid;
+	 while(low != high)
+	 {
+		 mid = (low + high)/2;
+		 System.out.println("enter 1 if no is between "+low+"-"+mid+"\n enter 2 if no is between"+(mid+1)+"-"+high);
+		 mid = (low+high)/2;
+		 if(c == 1)
+		 {
+			 high = mid;
+		 }
+		 else
+		 {
+			 low = mid+1;
+		 }
+		 return low;		 
+	 }
+	 return 0;
+	 
+		 
+	 
+ }
+}

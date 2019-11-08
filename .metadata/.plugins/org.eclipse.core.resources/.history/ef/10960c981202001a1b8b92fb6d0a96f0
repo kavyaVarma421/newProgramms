@@ -1,0 +1,27 @@
+package com.bridgelabz.alg;
+
+public class BinarySearchNumber
+{
+ public static int binarySearch(int[] arr, int n, int search)
+ {   
+	
+	 int low = 0;
+	 int high = n-1;
+	 int mid = (low+high)/2;
+	 while(low < high)
+	 {
+		 if(arr[search] == mid)
+		 {
+			 return mid;
+		 }
+		 else if(arr[search] < mid)
+		 {
+			high = mid-1;
+		 }
+		 low = mid+1;
+	 }
+	 
+	return -1;
+	 
+ }
+}

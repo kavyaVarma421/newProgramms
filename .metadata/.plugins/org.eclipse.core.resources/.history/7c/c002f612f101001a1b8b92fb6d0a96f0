@@ -1,0 +1,30 @@
+package com.bridgelabz.alg;
+
+public class PermutationsOfString 
+{
+ public static void permute(String s, int i, int j)
+ {
+	 if(i == j)
+	 {
+		 System.out.println(s);
+	 }
+	 else
+	 {
+		 for(int k = i;k <= j;k++)
+		 {
+			 s = swap(s, i, j);
+			 permute(s, i+1, j);
+		 }
+	 }
+ }
+ public static String swap(String s, int i, int j)
+ {
+	 char temp;
+	 char[] ch = s.toCharArray();
+	 temp = ch[i];
+	 ch[i] = ch[j];
+	 ch[j] = temp;
+	return String.valueOf(ch);
+	 
+ }
+}

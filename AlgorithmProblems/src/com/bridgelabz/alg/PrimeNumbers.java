@@ -23,6 +23,7 @@ public static void main(String[] args)
 				count++;
 				
 			}
+			
 		}
 		if(count == 2)
 		{

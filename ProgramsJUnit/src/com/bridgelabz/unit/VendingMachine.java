@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class VendingMachine 
 {
 static int i = 0;
-static int total = 0;
+
 static int[] notes = {1000, 500,100, 50, 10, 5, 2, 1};
 static int money;
 
