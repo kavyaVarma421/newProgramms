@@ -21,7 +21,7 @@ public class BinarySearchNumber
 				}
 			}
 		}
-		System.out.println(Arrays.toString(arr));
+		
 		
 	}
  public static void binarySearch(int[] arr, int search)
@@ -62,6 +62,9 @@ public class BinarySearchNumber
 	{
 		arr[i] = sc.nextInt();
 	}
+	bubbleSort(arr);
+	System.out.println("the sorted array is "+Arrays.toString(arr));
+	 
 	System.out.println("enter the number you want to search: ");
 	int search = sc.nextInt();
 	binarySearch( arr, search);

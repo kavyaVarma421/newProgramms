@@ -9,18 +9,21 @@ public class GenericBinary
 	 int n = array.length;
 	 int low = 0;
 	 int high = n;
-	 while (low < high)
+	 while (low <= high)
 		{
  		int mid = (low + high) / 2;
+ 		 if(search.equals(array[mid]))
+		   {
+			 return mid;
+		   }
  		if (search.compareTo(array[mid]) < 0)
  		{
-    			 high = mid;
- 		} else if (search.compareTo(array[mid]) > 0) {
+    			 high = mid-1;
+ 		} else  {
      			low = mid + 1;
- 		} else {
-     			return mid;
+ 		} 
  		}
-		}		
+				
 		return low;
 	 
  }
