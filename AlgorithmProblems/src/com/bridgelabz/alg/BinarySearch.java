@@ -6,21 +6,28 @@ import java.util.Scanner;
 public class BinarySearch 
 {
 	public static int binarySearchString(String[] words, String search) {
-		int f = 0;
-		int l  = words.length;
-
-		while (f < l)
-		{
-    		int mid = (f + l) / 2;
-    		if (search.compareTo(words[mid]) < 0)
-    		{
-       			 l = mid;
-    		} else if (search.compareTo(words[mid]) > 0) {
-        			f = mid + 1;
-    		} else {
-        			return mid;
-    		}
-		}		
+		 int f = 0;
+		 
+		 int l = words.length;
+		 while(f <= l) 
+		 {
+		   int mid = (f+l)/2;
+		   if(search.equals(words[mid]))
+		   {
+			 return mid;
+		   }
+		   if(search.compareTo(words[mid]) < 0)
+		   {
+			   l=mid-1;
+		   }
+		   else
+		   {
+			  
+			  
+			  f = mid+1;
+		   }
+		   
+		 }
 		return -1;
 }
 	
