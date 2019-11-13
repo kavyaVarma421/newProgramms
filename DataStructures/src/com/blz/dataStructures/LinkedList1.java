@@ -2,9 +2,11 @@ package com.blz.dataStructures;
 
 import java.util.Scanner;
 
+import com.blz.dataStructures.LinkedList.Node;
+
 public class LinkedList1 
 {
-	int count = 0;
+	static int count = 0;
 	Node head;
  class Node {
 	int data;
@@ -38,6 +40,76 @@ public class LinkedList1
 	 }
 	 
  }
+ public boolean search(int search)
+ {
+	 Node temp;
+	 if(head.data == search)
+	 {
+		 return true;
+	 }
+	 else {
+		 temp = head;
+		 while(temp.next != null)
+		 {
+			 if(temp.next.data == search)
+			 {
+				return true;
+			 }
+			 temp = temp.next;
+		 }
+		
+	 }
+	return false;
+ }
+ public boolean isEmpty()
+ {
+	 if(head == null)
+	 {
+		 return true;
+	 }
+	return false;
+	 
+ }
+ public int size()
+	{
+		Node temp;
+		int count = 0;
+		if(head != null)
+		{
+			count++;
+		}
+		temp = head;
+		while(temp.next != null)
+		{
+			count++;
+			temp = temp.next;
+		}
+		
+		return count;
+		
+	}
+ public void append(int item)
+ {
+	 Node node = new Node(item);
+	 node.data = item;
+	 node.next = null;
+	 if(head == null)
+	 {
+		 head = node;
+	 }
+	 Node temp = head;
+	 while(temp.next != null)
+	 {
+		 temp = temp.next;
+	 }
+	 temp.next = node;
+ }
+ public void index(int item, int index)
+ {
+	 index = 0;
+	 Node node = new Node(item);
+	 
+ }
  public void insert(int data1)
  {
 	 Node n = new Node(data1);
@@ -58,21 +130,28 @@ public class LinkedList1
  }
  public void remove(int element)
  {
-	 Node temp;
-	 temp = head;
-	if(temp.data == element)
+	Node temp;
+	Node n1 = null;
+	
+	if(head.data == element)
 	{
-		temp = temp.next;
-	}else {
-		while(temp.next != null)
+		head = head.next;
+	}
+	else {
+		temp = head;
+		while(temp.next.next != null)
 		{
-			if(temp.data == element)
+			if(temp.next.data == element)
 			{
-				temp = temp.next;
+				n1 = temp.next;
+				temp.next = n1.next;
 				break;
-			}else {
-				temp = temp.next;
 			}
+			temp = temp.next;
+		}
+		if(temp.next.data == element)
+		{
+			temp.next = null;
 		}
 	}
 	
@@ -107,10 +186,31 @@ public class LinkedList1
   l.add(14);
   l.add(15);
   l.display();
-  System.out.println("enter the element to remove");
+  
+  System.out.println("\n enter the element to remove");
   int element = sc.nextInt();
   l.remove(element);
   l.display();
+  System.out.println("\n enter the element you want to search ");
+  int search = sc.nextInt();
+  
+ if(l.search(search))
+ {
+	 l.remove(search);
+	 
+ }else
+ {
+	 l.add(search);
+ }
+ l.display();
+ System.out.println();
+ System.out.println(l.isEmpty());
+ l.display();
  
+ System.out.println("\n"+l.size());
+ System.out.println("enter the last element you want to add ");
+ int item = sc.nextInt();
+ l.append(item);
+ l.display();
 }
 }
