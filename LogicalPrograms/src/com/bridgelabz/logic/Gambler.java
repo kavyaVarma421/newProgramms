@@ -32,10 +32,10 @@ public class Gambler
 			} 
 		}
 		System.out.println();
-		System.out.println(wins+ "wins out of " +noOfTimes);
+		System.out.println(wins+ " wins out of " +noOfTimes);
 		System.out.println("percentage of games won = " +100.0 * wins/noOfTimes);
 		System.out.println("percentage of games loss = " +100.0 * (noOfTimes-wins)/noOfTimes);
-		System.out.println("Total bets in" +noOfTimes +"games =" +bets);
+		System.out.println("Total bets in " +noOfTimes +" games = " +bets);
 		
 	}
 	public static void main(String[] args) {
