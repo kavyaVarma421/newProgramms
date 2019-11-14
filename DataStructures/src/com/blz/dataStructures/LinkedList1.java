@@ -104,58 +104,101 @@ public class LinkedList1
 	 }
 	 temp.next = node;
  }
- public void index(int item, int index)
+ public int index(int item1)
  {
-	 index = 0;
-	 Node node = new Node(item);
-	 
+	 Node temp = head;
+	 int index = 0;
+	  do {
+		  if(temp.data == item1)
+		  {
+			  return index;
+		  }
+		  index++;
+		  temp = temp.next;
+	  }while(temp.next != null);
+	return index;
  }
- public void insert(int data1)
+ public void insert(int data1, int pos)
  {
 	 Node n = new Node(data1);
-	 n.data = data1;
-	 n.next = null;
-	 if(head == null)
-	 {
-		 head = n;
-	 }else
-	 {
-		 Node temp1 = head;
-		 while(temp1.next != null)
-		 {
-			 temp1 = temp1.next;
-		 }
-		 temp1.next = n;
-	 }
+	
+	 Node temp = head;
+	 Node prev = null;
+	for(int i = 0;i < pos;i++)
+	{
+	    prev = temp;
+		temp = temp.next;
+	}
+	if(prev == null)
+	{
+	n.next= temp;
+    head = n;
+	}else
+	{
+		prev.next = n;
+		n.next = temp;
+	}
+	
  }
  public void remove(int element)
  {
 	Node temp;
-	Node n1 = null;
+	Node prev = null;
 	
 	if(head.data == element)
 	{
 		head = head.next;
 	}
 	else {
-		temp = head;
-		while(temp.next.next != null)
-		{
-			if(temp.next.data == element)
+		temp = head.next;
+		prev = head;
+		while (temp != null) {
+			if (temp.data == element) 
 			{
-				n1 = temp.next;
-				temp.next = n1.next;
+			   prev.next = temp.next;
 				break;
 			}
+		    prev = temp;
 			temp = temp.next;
-		}
-		if(temp.next.data == element)
-		{
-			temp.next = null;
 		}
 	}
 	
  }
+ public int pop()
+ {
+	 Node temp = head;
+	 Node prev = null;
+	 while(temp.next != null)
+	 {
+		 prev = temp;
+		 temp = temp.next;
+	 }
+	 if(prev != null)
+	 {
+		 prev.next = null;
+	 }else {
+		 head = null;
+	 }
+	
+	return temp.data;		 
+ }
+  public int popPos(int pos1)
+  {
+	 Node temp = head;
+	 Node prev = null;
+	 for(int i = 0;i < pos1;i++)
+	 {
+		 prev = temp;
+		 temp = temp.next;
+	 }
+	 if(prev != null)
+	 {
+		 prev.next = null;
+	 }else {
+		 head = null;
+	 }
+	 return temp.data;
+  }
  public String display()
  {
 	 Node temp;
@@ -167,10 +210,10 @@ public class LinkedList1
 		 temp = head;
 		 while(temp.next != null)
 		 {
-			 System.out.print(temp.data+" ");
+			 System.out.println(temp.data+" ");
 			 temp = temp.next;
 		 }
-		System.out.print(temp.data+"");
+		System.out.println(temp.data+"");
 	 }
 	return str;
 	 
@@ -212,5 +255,22 @@ public class LinkedList1
  int item = sc.nextInt();
  l.append(item);
  l.display();
+ System.out.println("\n enter the no  ");
+ int item1 = sc.nextInt();
+
+ System.out.println("the no found at "+l.index(item1));
+ 
+ System.out.println("enter the pos u want to add ");
+ int pos = sc.nextInt();
+ System.out.println("enter the element u want to add");
+ int data1 = sc.nextInt();
+ l.insert(data1, pos);
+ l.display();
+
+ System.out.println("\n the elemnt poped "+ l.pop());
+ l.display();
+ System.out.println("\n enter the pos ");
+ int pos1 = sc.nextInt();
+ System.out.println(" popped element "+l.popPos(pos1));
 }
 }
