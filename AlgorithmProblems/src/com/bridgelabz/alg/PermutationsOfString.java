@@ -14,8 +14,9 @@ public class PermutationsOfString
 	 {
 		 for(int k = i;k <= j;k++)
 		 {
-			 s = swap(s, i, j);
+			 s = swap(s, i, k);
 			 permute(s, i+1, j);
+			s = swap(s,i, k);
 		 }
 		 
 	 }

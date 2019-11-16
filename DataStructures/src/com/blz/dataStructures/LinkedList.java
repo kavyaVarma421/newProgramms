@@ -1,7 +1,7 @@
 package com.blz.dataStructures;
 
-public class LinkedList<T> {
-
+public class LinkedList<T extends Comparable> {
+    //Node class
 	static class Node<T> {
 		T data;
 		Node next;
@@ -13,13 +13,13 @@ public class LinkedList<T> {
 	}
 
 	Node head;
-
+  //function to add the data into linkedlist
 	public void add(T data) {
 		Node<T> node = new Node<T>(data);
-
+       //keeping the first node as head
 		if (head == null) {
-			 head = node;
-
+			head = node;
+        //adding and linking  the data one by one to head 
 		} else {
 			Node<T> temp = head;
 			while (temp.next != null) {
@@ -28,54 +28,56 @@ public class LinkedList<T> {
 			temp.next = node;
 		}
 	}
-
+	
+ //function to remove the item from linked list
 	public void remove(T item) {
 		Node<T> temp;
 		Node<T> prev = null;
+		//if the item equals to head it will remove and  it will take next node as head
 		if (head.data == item) {
 			head = head.next;
 		} else {
-			temp = head.next;
+			temp = head.next;    
 			prev = head;
-			while (temp != null) {
-				if (temp.data.equals(item)) 
-				{
-				   prev.next = temp.next;
+			while (temp != null) {   // it will continue loop untill the last node        
+				if (temp.data.equals(item)) {  //if item is euquals to in list of data it will remove data and link the next node data                              
+					prev.next = temp.next;         
 					break;
 				}
-			    prev = temp;
-				temp = temp.next;
+				prev = temp;
+				temp = temp.next; 
 			}
-		
+
 		}
 	}
-
+	
+  //function to serch the item from linkedlist and returns boolean value
 	public boolean search(T search) {
 		Node<T> temp;
+		//if searching item is equals to head it will return true
 		if (head.data.equals(search)) {
 			return true;
 		} else {
 			temp = head.next;
 			while (temp != null) {
-				if (temp.data.equals(search)) {
+				if (temp.data.equals(search)) { //if searching element is equals to data int the list it will return true
 					return true;
 				}
 				temp = temp.next;
 			}
-			
 		}
-		return false;
-
+		return false;//if searching item is not there it will return false
 	}
-
+	
+ //function to know the weather the list is empty or not and returns the boolean value
 	public boolean isEmpty() {
-		if (head == null) {
+		if (head == null) { // if head data present in the list it will return true
 			return true;
 		}
-		return false;
-
+		return false;//if data is not there it will return false
 	}
-
+	
+  //function to know the size
 	public int size() {
 		Node<T> temp;
 		int count = 0;
@@ -84,16 +86,15 @@ public class LinkedList<T> {
 		}
 		temp = head;
 		while (temp.next != null) {
-			count++;
+			count++;                 //it will count the how many nodes present in the list
 			temp = temp.next;
 		}
-
 		return count;
-
 	}
-
+	
+  //function to add the item in list
 	public void append(T item) {
-		Node<T> node = new Node<T>(item);
+		Node<T> node = new Node<T>(item); 
 		node.data = item;
 		node.next = null;
 		if (head == null) {
@@ -101,31 +102,32 @@ public class LinkedList<T> {
 		}
 		Node<T> temp = head;
 		while (temp.next != null) {
-			temp = temp.next;
+			temp = temp.next; //if last node is null it will add  the new data into last node
 		}
 		temp.next = node;
 	}
-
-	public int index(T item) {
+	
+  // function to know the particular item position
+	public int index(T item1) {
 		Node<T> temp = head;
 		int index = 0;
 		do {
-			if (temp.data == item) {
-				return index;
+			if (temp.data.equals(item1)) {  //it will check the item is matching with the data present in list
+				return index;      //if item matches it will return the position
 			}
 			index++;
 			temp = temp.next;
 		} while (temp.next != null);
-		return -1;
-
+		return index;    
 	}
-
-	public void insert(T item, int index) {
-		Node<T> n = new Node<T>(item);
-		Node temp = head;
-		Node prev = null;
+	
+   //function to add the item based on index
+	public void insert(T item2, int index) {
+		Node<T> n = new Node<T>(item2);
+		Node<T> temp = head;
+		Node<T> prev = null;
 		for (int i = 0; i < index; i++) {
-			prev = temp;
+			prev = temp;        
 			temp = temp.next;
 		}
 		if (prev == null) {
@@ -136,7 +138,8 @@ public class LinkedList<T> {
 			n.next = temp;
 		}
 	}
-
+	
+  //function to pop the last item and returns that item
 	public T pop() {
 		Node<T> temp = head;
 		Node<T> prev = null;
@@ -144,35 +147,34 @@ public class LinkedList<T> {
 			prev = temp;
 			temp = temp.next;
 		}
-		if(prev != null)
-		{
-			prev.next = null;
-		}else
-		{
+		if (prev != null) {
+			prev.next = null; //it will pop the last element
+		} else {
 			head = null;
 		}
 
-		return temp.data;
+		return temp.data; //it will return the popping item
 
 	}
-	public T popPos(int pos1)
-	{
+	
+ //function to pop the item based on index
+	public T popPos(int pos1) {
 		Node<T> temp = head;
 		Node<T> prev = null;
-		for(int i = 0;i < pos1;i++)
-		{
+		Node<T> node = null;
+		for (int i = 0; i < pos1; i++) {
 			prev = temp;
 			temp = temp.next;
 		}
-		if(prev != null)
-		{
-			prev.next = null;
-		}else {
+		if (prev != null) {
+			prev.next = prev.next.next;
+		} else {
 			head = null;
 		}
-		return temp.data;
+		return temp.data; 
 	}
-
+	
+ //function to display the all the data present in the linkedlist
 	public String display() {
 		Node<T> temp;
 		String str = " ";
@@ -181,13 +183,44 @@ public class LinkedList<T> {
 		} else {
 			temp = head;
 			while (temp.next != null) {
-				System.out.println(temp.data + "");
+				System.out.print(temp.data + " ");
 				temp = temp.next;
 			}
-			System.out.println(temp.data + "");
+			System.out.print(temp.data + " ");
 		}
 		return str;
 
+	}
+	
+ //function to sort the data present in the list
+	void sort() {
+		Node<T> prev = null, next = null;
+		Node<T> current = head;
+
+		next = current.next;
+           //prev = current;
+		while (next != null) {
+			if (current.data.compareTo(next.data) > 0) {
+				if (prev != null) {
+					prev.next = next;
+					current.next = next.next;
+					next.next = current;
+				} else {
+					current.next = next.next;
+					next.next = current;
+					head = next;
+				}
+				prev = null;
+				current = head;
+				next = current.next;
+
+			} else {
+				prev = current;
+				current = next;
+				next = current.next;
+			}
+
+		}
 	}
 
 }
