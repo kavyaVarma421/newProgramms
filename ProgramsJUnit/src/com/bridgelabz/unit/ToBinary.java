@@ -7,13 +7,14 @@ public class ToBinary
 	
 static String decToBinary(int n)
 {
-		String out = " ";
+
+		String out = "";
 		
 	while(n != 0)
 	{
 		int rem = n % 2;
 		
-		out = rem+" "+out;
+		out = rem+out;
 		n = n/2;
 	}
      
@@ -27,8 +28,11 @@ public static void main(String[] args)
 	System.out.println("enter the dec num: ");
 	int n = sc.nextInt();
 	
-	System.out.println("the binary no  is -->" +decToBinary(n));
-	String str = decToBinary(n);
+		
+		  System.out.println("the binary no  is -->" +decToBinary(n)); String str =
+		  decToBinary(n);
+		 
+		 
 	
 	
 }
