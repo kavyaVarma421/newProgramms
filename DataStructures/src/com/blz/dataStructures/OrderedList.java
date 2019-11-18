@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class OrderedList {
 	public static void main(String[] args) throws IOException{
-      LinkedList<Integer> ll = new LinkedList<Integer>();
+      LinkedList<Integer> ll = new LinkedList<>();
       Scanner sc = new Scanner(System.in);
       File f = new File("/home/admin1/listNum");
       BufferedReader br = new BufferedReader(new FileReader(f));
