@@ -32,7 +32,7 @@ public class Stack<T> {
 
 	}
 
-	public void pop() {
+	public T pop() {
 		Node<T> temp = head;
 		Node<T> prev = null;
 		while (temp.next != null) {
@@ -44,6 +44,7 @@ public class Stack<T> {
 		} else {
 			head = null;
 		}
+		return temp.data;
 
 	}
 
@@ -69,7 +70,7 @@ public class Stack<T> {
 			count++;
 		}
 		temp = head;
-		while (temp.next != null) {
+		while (temp != null) {
 			count++; // it will count the how many nodes present in the list
 			temp = temp.next;
 		}

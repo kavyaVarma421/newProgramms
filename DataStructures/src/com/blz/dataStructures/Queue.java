@@ -55,7 +55,7 @@ public class Queue<T>
 			count++;
 		}
 		temp = head;
-		while (temp.next != null) {
+		while (temp != null) {
 			count++;                 //it will count the how many nodes present in the list
 			temp = temp.next;
 		}

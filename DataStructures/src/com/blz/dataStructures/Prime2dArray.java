@@ -1,9 +1,10 @@
 package com.blz.dataStructures;
 
 public class Prime2dArray {
+	 static int[][] primeNum = new int[10][100];
 	public static void primeArray() {
 		int[][] array = new int[10][100];
-		int[][] primeNum = new int[10][100];
+		
 		int temp = 1;
 
 		for (int i = 0; i < 10; i++) {
@@ -25,13 +26,16 @@ public class Prime2dArray {
 				}
 			}
 		}
+	}
+	  public static void displayPrime() {
+		  
 		for(int i = 0;i < 10;i++)
 		{
-			for(int j = 0;j < 100;j++)
+			for(int j = 1;j < 100;j++)
 			{
 				if(primeNum[i][j] != -1)
 				{
-					System.out.println(primeNum[i][j]+" ");
+					System.out.print(primeNum[i][j]+" ");
 				}
 			}
 			System.out.println("\n");
@@ -56,5 +60,6 @@ public class Prime2dArray {
 	public static void main(String[] args) 
 	{
 		primeArray();
+		displayPrime();
 	}
 }
