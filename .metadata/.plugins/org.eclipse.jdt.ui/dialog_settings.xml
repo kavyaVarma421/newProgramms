@@ -57,4 +57,12 @@
 		<item key="DIALOG_HEIGHT" value="740"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
 	</section>
+	<section name="nls_accessor_history">
+		<section name="0">
+			<item key="accessorName" value="Messages"/>
+			<item key="accessorPackage" value="=DataStructures/src&lt;com.blz.dataStructures"/>
+			<item key="bundleName" value="messages.properties"/>
+			<item key="bundlePackage" value="=DataStructures/src&lt;com.blz.dataStructures"/>
+		</section>
+	</section>
 </section>
