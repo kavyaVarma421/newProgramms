@@ -1,6 +1,6 @@
-package com.blz.dataStructures;
+package com.bridgelabz.datastructures.base;
 
-import com.blz.dataStructures.LinkedList.Node;
+import com.bridgelabz.datastructures.base.LinkedList.Node;
 
 public class Stack<T> {
 	// Node class

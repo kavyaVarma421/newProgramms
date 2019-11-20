@@ -2,6 +2,8 @@ package com.blz.dataStructures;
 
 import java.util.Scanner;
 
+import com.bridgelabz.datastructures.base.Deque;
+
 public class PalindromeCheckerByQueue {
 	public static void main(String[] args) {
 

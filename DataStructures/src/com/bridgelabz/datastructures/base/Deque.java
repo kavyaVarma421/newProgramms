@@ -1,6 +1,6 @@
-package com.blz.dataStructures;
+package com.bridgelabz.datastructures.base;
 
-import com.blz.dataStructures.Queue.Node;
+import com.bridgelabz.datastructures.base.Queue.Node;
 
 public class Deque<T>
 {

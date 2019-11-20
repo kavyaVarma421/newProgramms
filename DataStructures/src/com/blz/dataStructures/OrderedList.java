@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+import com.bridgelabz.datastructures.base.LinkedList;
+
 public class OrderedList {
 	public static void main(String[] args) throws IOException{
       LinkedList<Integer> ll = new LinkedList<>();

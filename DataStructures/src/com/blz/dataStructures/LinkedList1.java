@@ -2,7 +2,7 @@ package com.blz.dataStructures;
 
 import java.util.Scanner;
 
-import com.blz.dataStructures.LinkedList.Node;
+import com.bridgelabz.datastructures.base.LinkedList.Node;
 
 public class LinkedList1 
 {

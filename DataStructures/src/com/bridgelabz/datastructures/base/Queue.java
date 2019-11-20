@@ -1,11 +1,11 @@
-package com.blz.dataStructures;
+package com.bridgelabz.datastructures.base;
 
-import com.blz.dataStructures.LinkedList.Node;
+import com.bridgelabz.datastructures.base.LinkedList.Node;
 
 public class Queue<T> 
 {
 
-	class Node<T>{
+	public class Node<T>{
 		T data;
 		Node<T> next;
 		Node(T data)

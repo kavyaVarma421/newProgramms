@@ -1,10 +1,10 @@
-package com.blz.dataStructures;
+package com.bridgelabz.datastructures.base;
 
 public class LinkedList<T extends Comparable> {
     //Node class
-	static class Node<T> {
-		T data;
-		Node next;
+	public static class Node<T> {
+		public T data;
+		public Node next;
 
 		Node(T data) {
 			this.data = data;
@@ -12,7 +12,7 @@ public class LinkedList<T extends Comparable> {
 		}
 	}
 
-	Node head;
+	public Node head;
   //function to add the data into linkedlist
 	public void add(T data) {
 		Node<T> node = new Node<T>(data);
@@ -193,7 +193,7 @@ public class LinkedList<T extends Comparable> {
 	}
 	
  //function to sort the data present in the list
-	void sort() {
+	public void sort() {
 		Node<T> prev = null, next = null;
 		Node<T> current = head;
 

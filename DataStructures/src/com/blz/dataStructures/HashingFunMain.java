@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+import com.bridgelabz.datastructures.base.HashingFunction;
+
 public class HashingFunMain {
 	public static void main(String[] args) throws IOException {
 

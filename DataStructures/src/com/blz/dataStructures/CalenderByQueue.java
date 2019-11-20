@@ -1,5 +1,7 @@
 package com.blz.dataStructures;
 
+import com.bridgelabz.datastructures.base.Queue;
+
 public class CalenderByQueue 
 {
 public static void calenderQue()
