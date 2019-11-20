@@ -15,9 +15,10 @@ public class Stack<T> {
 	}
 
 	Node<T> head;
-
+  Node<T> top;
 	public void push(T data) {
 		Node<T> node = new Node<T>(data);
+		top = node;
 		// keeping the first node as head
 		if (head == null) {
 			head = node;
@@ -29,12 +30,13 @@ public class Stack<T> {
 			}
 			temp.next = node;
 		}
-
+        
 	}
 
 	public T pop() {
 		Node<T> temp = head;
 		Node<T> prev = null;
+		
 		while (temp.next != null) {
 			prev = temp;
 			temp = temp.next;
@@ -44,16 +46,17 @@ public class Stack<T> {
 		} else {
 			head = null;
 		}
+		top = prev;
 		return temp.data;
-
+   
 	}
 
 	public T peek() {
-		if (head == null) {
-			System.out.println("no data present");
+		if(isEmpty())
+		{
+			return null;
 		}
-		T temp = head.data;
-		return temp;
+		return top.data;
 	}
 
 	public boolean isEmpty() {
