@@ -1,0 +1,23 @@
+{
+	"pulses": [
+		{
+			"itemName": "pulses",
+			"itemPricePerKg": 800.0,
+			"itemWeight": 40.0
+		}
+	],
+	"wheat": [
+		{
+			"itemName": "wheat",
+			"itemPricePerKg": 500.0,
+			"itemWeight": 70.0
+		}
+	],
+	"Rice": [
+		{
+			"itemName": "Rice",
+			"itemPricePerKg": 1000.5,
+			"itemWeight": 60.0
+		}
+	]
+}

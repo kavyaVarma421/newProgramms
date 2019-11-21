@@ -5,4 +5,9 @@
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 		</list>
 	</section>
+	<section name="ResourceNavigator">
+		<item key="ResourceViewer.STORE_SORT_TYPE" value="1"/>
+		<item key="ResourceWorkingSetFilter.STORE_WORKING_SET" value="Aggregate for window 1571901108926"/>
+		<item key="LINK_NAVIGATOR_TO_EDITOR" value="false"/>
+	</section>
 </section>

@@ -1,6 +1,6 @@
 package com.blbz.jsoninventory.controller;
 
-public class Main 
+public class InventoryMain
 {
- 
+
 }
